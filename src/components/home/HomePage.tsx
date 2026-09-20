@@ -6,8 +6,8 @@ import { AnimatePresence, motion, useReducedMotion, useScroll, useTransform } fr
 import {
   ArrowDown, ArrowRight, Clock, Menu, Minus, Phone, Plus, X,
 } from "lucide-react";
-import heroEditorial from "@/assets/campaign/hero-editorial.webp";
 import { AlignerScene } from "./AlignerScene";
+import { MagneticTooth } from "./MagneticTooth";
 import studioConcept from "@/assets/campaign/studio-concept.webp";
 import { useCinematicScroll } from "@/hooks/use-cinematic-scroll";
 
@@ -127,7 +127,7 @@ function Hero() {
   const progressScale = useTransform(scrollYProgress, [0, 1], [0, 1]);
   return <section ref={ref} id="top" className="hero-shell"><div className="hero-sticky">
     <motion.div className="hero-media" style={reduceMotion ? undefined : desktop ? { scale: imageScale, x: imageX, clipPath: mediaClip } : { scale: imageScale }}>
-      <img src={heroEditorial} alt={t("Conceptual editorial portrait featuring a natural smile")} className="hero-image" width={1588} height={991} fetchPriority="high" />
+      <MagneticTooth reduceMotion={reduceMotion} />
     </motion.div>
     <div className="hero-shade" /><div className="hero-grid" aria-hidden="true" />
     <motion.div className="hero-content" style={reduceMotion ? undefined : { y: copyY, opacity: copyOpacity }}>
